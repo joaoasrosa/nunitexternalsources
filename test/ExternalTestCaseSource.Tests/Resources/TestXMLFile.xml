@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NUnitEx.ExternalTestCaseSource.Tests>
+  <TestCaseSourceXmlAttribute>
+    <EatYourOwnDogFood2>
+      <instance>
+        <s>MyString</s>
+        <a>1</a>
+      </instance>
+      <instance>
+        <s>OtherString</s>
+        <a>2</a>
+      </instance>
+    </EatYourOwnDogFood2>
+  </TestCaseSourceXmlAttribute>
+</NUnitEx.ExternalTestCaseSource.Tests>

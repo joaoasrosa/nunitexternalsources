@@ -1,0 +1,14 @@
+version: 0.1.{build}
+os: Windows Server 2012 R2
+configuration: Release
+platform: Any CPU
+before_build:
+- nuget restore
+build:
+  project: NUnitExternalSources.sln
+  verbosity: minimal
+test_script:
+- .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow .\test\ExternalTestCaseSource.Tests\ExternalTestCaseSource.Tests.csproj /config:Release" "-filter:+[*]* -[ExternalTestCaseSource.Tests]*"
+- "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
+- pip install git+git://github.com/codecov/codecov-python.git
+- codecov -f "results.xml"
