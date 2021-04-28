@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: ReportGenerator
+    versions:
+    - 4.8.4
+    - 4.8.5
+    - 4.8.6
+    - 4.8.7
+  - dependency-name: NUnit
+    versions:
+    - 3.13.0
+    - 3.13.1
